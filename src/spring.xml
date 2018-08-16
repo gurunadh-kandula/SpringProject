@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<context:component-scan base-package="com.jda.spring.beans"/>
+
+<bean id="address" class="com.jda.spring.beans.Address">  
+<constructor-arg value="vizag"></constructor-arg>  
+<constructor-arg value="AP"></constructor-arg>  
+<constructor-arg value="India"></constructor-arg>  
+</bean>  
+  
+  
+<bean id="employee" class="com.jda.spring.beans.Employee">  
+<constructor-arg value="2" type="int"></constructor-arg>  
+<constructor-arg value="guru"></constructor-arg>  
+<constructor-arg>  
+<ref bean="address"/>  
+</constructor-arg>  
+</bean>  
+<bean id="q" class="com.jda.spring.beans.Question">  
+<constructor-arg value="111"></constructor-arg>  
+<constructor-arg value="What is java?"></constructor-arg>  
+<constructor-arg>  
+<list>  
+<value>Java is a programming language</value>  
+<value>Java is a Platform</value>  
+<value>Java is an Island of Indonasia</value>  
+</list>  
+</constructor-arg>  
+</bean>    
+<bean id="b" class="com.jda.spring.beans.B"></bean>  
+<bean id="a" class="com.jda.spring.beans.A" autowire="byName"></bean>  
+</beans>
